@@ -1,6 +1,7 @@
 import { getResult } from './result.js';
 import { timer } from './calcTime.js';
-
+import '../sounds/stop.mp3';
+import '../css/style.css'
 
 const form = document.getElementById('timer');
 
