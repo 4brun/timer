@@ -1,7 +1,10 @@
+import { writeOutput, dateDiff as printDateDiff } from './output.js';
+import calcDiff from './calcDate.js';
 import { getResult } from './result.js';
 import { timer } from './calcTime.js';
-import '../sounds/stop.mp3';
-import '../css/style.css'
+
+// import '../sounds/stop.mp3';
+// import '../css/style.css'
 
 const form = document.getElementById('timer');
 
@@ -16,5 +19,23 @@ form.onsubmit = function (e) {
    else {
       timer(min, sec);
       console.log(timeFrom);
+   }
+}
+
+const formCalc = document.getElementById('calcDate')
+
+formCalc.onsubmit = function (event) {
+   event.preventDefault()
+
+   const formData = new FormData(event.target)
+   const dateFrom = formData.get("dateFrom")
+   const dateTo = formData.get("dateTo")
+
+   if (!dateFrom || !dateTo) {
+      writeOutput('Ошибка')
+   } else {
+      const diff = calcDiff(dateFrom, dateTo)
+
+      printDateDiff(diff)
    }
 }

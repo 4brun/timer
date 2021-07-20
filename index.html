@@ -11,18 +11,39 @@
 </head>
 
 <body>
-   <h2>Таймер</h2>
-   <!-- <progress id="progress" max="100" value="0"></progress> -->
-   <form id="timer">
-      <label for="timeFrom">
-         <p>Введите время (минуты : секунды)</p>
-         <input type="time" name="timeFrom" id="timeFrom">
-         <button type="submit" id="start">Старт</button>
-         <button id="stop">Стоп</button>
-      </label>
-   </form>
-   <h2 id="result"></h2>
+   <div class="tab">
+      <a href="#calcTab">Калькулятор дат</a>
+      <a href="#timerTab">Таймер</a>
+   </div>
+   <div id="calcTab" class="tabcontent">
+      <form id="calcDate">
+         <h2>Калькулятор дат</h2>
+         <label for="dateFrom">
+            Первая дата:
+            <input type="date" name="dateFrom" id="dateFrom">
+         </label>
+         <label for="dateTo">
+            Вторая дата:
+            <input type="date" name="dateTo" id="dateTo">
+         </label>
+         <button type="submit">Рассчитать промежуток</button>
+      </form>
+      <p id="output">
+      </p>
+   </div>
 
+   <div id="timerTab" class="tabcontent">
+      <h2>Таймер</h2>
+      <form id="timer">
+         <label for="timeFrom">
+            <p>Введите время (минуты : секунды)</p>
+            <input type="time" name="timeFrom" id="timeFrom">
+            <button type="submit" id="start">Старт</button>
+            <button id="stop">Стоп</button>
+         </label>
+      </form>
+      <h2 id="result"></h2>
+   </div>
 </body>
 
 </html>

@@ -62,3 +62,38 @@ h2 {
    padding-bottom: 20px;
    margin-bottom: 50px;
 }
+
+.tab {
+   overflow: hidden;
+   border: 1px solid #ccc;
+   background-color: #f1f1f1;
+}
+
+.tab a {
+   background-color: inherit;
+   float: left;
+   border: none;
+   outline: none;
+   cursor: pointer;
+   padding: 14px 30px;
+   transition: 0.3s;
+   font-size: 17px;
+   text-decoration: none;
+   color: #17130e;
+}
+
+.tab a:hover {
+   background-color: #ddd;
+}
+
+.tab a.active {
+   background-color: #ccc;
+}
+
+.tabcontent {
+   display: none;
+   padding: 6px 12px;
+}
+.tabcontent:target {
+   display: block;
+}
