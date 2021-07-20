@@ -1,6 +1,7 @@
 const { resolve } = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const miniCssExtractPlugin = require('mini-css-extract-plugin');
+const bundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
    mode: 'development',
@@ -31,6 +32,7 @@ module.exports = {
       }),
       new miniCssExtractPlugin({
          filename: '[name][contenthash].css'
-      })
+      }),
+      new bundleAnalyzerPlugin(),
    ]
 }
